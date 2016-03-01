@@ -7,3 +7,7 @@ To generate a PDF use [Deckset](http://www.decksetapp.com) with the theme **Sche
 # Presentations
 
 - [CocoaHeads Campinas February 2016 - Movile HQ](https://github.com/fpg1503/OptionalsTalk/releases/tag/CocoaHeads-CPS-February)
+
+# Rendered PDFs
+
+You can find the rendered PDFs under [Releases](https://github.com/fpg1503/OptionalsTalk/releases).
