@@ -1,6 +1,6 @@
-![fit inline](logo-cocoa-heads.gif)
+![fit inline](logo-tdc.png)
 
-# CocoaHeads CPS
+# The Developer's Conference
 
 ## *Francesco Perrotti-Garcia*
 
@@ -30,23 +30,12 @@
 
 ---
 
-![original fit](playkids-2.png)
-
----
-
 ![original fit](talk.jpg)
-
----
-
 ![original fit](stories.png)
 
 ---
 
 ![original fit](fly.png)
-
---- 
-
-![original fit](fly-2.png)
 
 ---
 
@@ -54,7 +43,7 @@
 
 ---
 
-![original fit](party-2.png)
+![original fit](iFood.png)
 
 ---
 
@@ -63,6 +52,11 @@
 ---
 
 #[fit] *Gato de Scrödinger*
+
+---
+
+![](equinocios.png)
+#[fit] equionociOS
 
 ---
 
@@ -493,6 +487,24 @@ func flatMap<U>(f: (T throws -> MyOptional<U>)) rethrows -> MyOptional<U> {
 
 ---
 
+#[fit] Criar um `Cat`
+#[fit] a partir de `String?`
+
+
+---
+
+```swift
+let cat = name.map(Cat.init)
+```
+
+---
+
+```swift
+let cat = name.map { Cat(named: $0) }
+```
+
+---
+
 #[fit] O que **não**
 #[fit] conseguimos recriar?
 
@@ -573,6 +585,70 @@ init?(name: String) {
 
 #[fit] Não são inicializadores
 #[fit] do seu tipo!
+
+---
+
+#[fit] Criando `NSURL`
+#[fit] a partir de `String?`
+
+---
+
+```swift
+var url: NSURL? = .None
+if let string = string {
+    url = NSURL(string: string)
+}
+```
+
+---
+
+#[fit] Mutabilidade
+
+---
+
+```swift
+let url = string.map { NSURL(string: $0) }
+```
+
+---
+
+#[fit] `url` é `NSURL??`
+
+---
+
+```swift
+let url = string.map(NSURL.init)
+```
+
+---
+
+#[fit] Retorna `NSURL`
+
+---
+
+#[fit] Usa `init` errado!
+
+---
+
+#[fit] Prestar atenção na assinatura!
+
+---
+
+```swift
+func foo(string: String?) -> NSURL? {
+    //some logic
+    return string.flatMap(NSURL.init)
+}
+```
+
+---
+
+```swift
+func foo(string: String?) -> NSURL? {
+    //some logic
+    return string.flatMap { NSURL(string:$0) }
+}
+```
 
 ---
 
@@ -679,6 +755,15 @@ if let aUnwrapped = a,
 
 #[fit] Também funciona com
 #[fit] coisas do `ObjC`!
+
+---
+
+![](OptionalOutletsGH.png)
+#[fit] Optional Outlets
+
+---
+
+![](OptionalOutlets.gif)
 
 ---
 
@@ -893,3 +978,7 @@ public func ?? <T> (optional: T?, @autoclosure defaultValue: () throws -> T)
 
 #[fit] Contato:
 #[fit] *@fpg1503*
+
+---
+
+#[fit][github.com/fpg1503/OptionalsTalk](https://github.com/fpg1503/OptionalsTalk)
